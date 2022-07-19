@@ -8,8 +8,8 @@ let obj = {
 
     function multiplyNumeric(obj) {
         for (let key in obj) {
-        if (typeof obj[key] == 'number') {
-        obj[key] *= 2;
+        if (typeof obj[key] == 'string') {
+        obj[key] = obj[key] + 2;
         }
         }
         }

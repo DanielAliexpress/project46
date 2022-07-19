@@ -8,5 +8,56 @@
 </head>
 <body>
 <script src="script.js"></script>
+<script>
+class Result {
+    number = 0;
+    constructor(value) {
+        this.number = value;
+    }
+
+    getAbs() {
+        console.log(this.number)
+    }
+}
+
+class Count extends Result  {
+    cashedValue = 0;
+
+    constructor(value) {
+        super(value)
+        this.cashedValue = value;
+    }
+
+    sum(n) {
+        this.cashedValue = this.cashedValue + n;
+        return this;
+    }
+
+    div(n) {
+        this.cashedValue = this.cashedValue - n;
+        return this;
+    }
+
+    sub(n) {
+        this.cashedValue = this.cashedValue / n;
+        return this;
+    }
+
+    mult(n) {
+        this.cashedValue = this.cashedValue * n;
+        return this;
+    }
+
+    get() {
+        return this.cashedValue;
+    }
+
+    
+}
+
+const jquery = (n) => new Count(n);
+console.log(jquery(10).div(3).mult(2).sub(8).sum(9).get());
+
+</script>
 </body>
 </html>
